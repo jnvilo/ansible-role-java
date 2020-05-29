@@ -1,0 +1,23 @@
+---
+# tasks file for java
+
+- name: Include version-specific variables for CentOS/RHEL.
+  include_vars: "RedHat-{{ ansible_distribution_version.split('.')[0] }}.yml"
+  when: ansible_distribution == 'CentOS' or
+        ansible_distribution == 'Red Hat Enterprise Linux' or
+        ansible_distribution == 'RedHat'
+
+- name: Define java_packages.
+  set_fact:
+    java_packages: "{{ __java_packages | list }}"
+  when: java_packages is not defined
+
+
+- name: Ensure Java is installed.
+  package:
+    name: "{{ java_packages }}"
+    state: present
+
+
+
+
