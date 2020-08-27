@@ -10,7 +10,7 @@ Example Playbook:
   	roles:
     	- java
       	java_packages:
-       	 - java-1.8.0-openjdk
+	 - java-1.8.0-openjdk
 	 - java-11-openjdk
        
 
