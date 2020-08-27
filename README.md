@@ -6,11 +6,11 @@ As the title says, we use this ansible role to ensure Java is installed on a ser
 Example Playbook:
 ----------
 
-	- hosts: server
-  	roles:
-    	- java
-      	java_packages:
-	 - java-1.8.0-openjdk
-	 - java-11-openjdk
+        - hosts: server
+        roles:
+        - java
+          java_packages:
+            - java-1.8.0-openjdk
+            - java-11-openjdk
        
 
